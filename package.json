@@ -1,0 +1,27 @@
+{
+  "name": "seneca-component",
+  "version": "0.1.0",
+  "description": "A demo ReactJS component.",
+  "author": "Jan Baykara (janbaykara@gmail.com)",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/janbaykara/seneca-component#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janbaykara/seneca-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/janbaykara/seneca-component/issues"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
