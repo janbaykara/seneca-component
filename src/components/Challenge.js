@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import interpolate from 'color-interpolate';
+import color from 'color';
 import Toggle from './Toggle';
 
 export default class Challenge extends Component {
@@ -11,6 +11,7 @@ export default class Challenge extends Component {
     }
   }
 
+  // This could probably be handed off to App's state
   setToggle = (toggleIndex, answerIndex) => {
     this.setState((prevState, props) => {
       let nextState = prevState;
@@ -21,14 +22,14 @@ export default class Challenge extends Component {
 
   outcome = () => {
     let outcome = this.state.answers.reduce((sum,curr)=> sum + curr)
-    let outcomePercent = outcome/this.props.challenge.toggles.length;
-    // Interpolate module for when we inevitably don't know the
-    // number of toggles, and so cannot define each percentage's gradient values
-    let colourmapTop = interpolate(this.props.challenge.colours.top);
-    let colourmapBottom = interpolate(this.props.challenge.colours.bottom);
+    let gradient = {
+      bottom: `rgb(${this.props.challenge.colours[outcome][0].join(',')})`,
+      top: `rgb(${this.props.challenge.colours[outcome][1].join(',')})`
+    }
+
     return {
-      backgroundColor: `linear-gradient(to top, ${colourmapBottom(outcomePercent)} 0%, ${colourmapTop(outcomePercent)} 100%)`,
-      textColor: colourmapBottom(outcomePercent),
+      backgroundColor: `linear-gradient(to top, ${gradient.bottom} 0%, ${gradient.top} 100%)`,
+      textColor: color(gradient.bottom).darken(0.15),
       correct: this.props.challenge.toggles.length === outcome
     }
   }
