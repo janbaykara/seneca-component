@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'tachyons'; // atomic css classes
 import Challenge from './components/Challenge';
 
 export default class App extends Component {
@@ -35,7 +36,10 @@ export default class App extends Component {
 
   render() {
     return (
-		  <Challenge challengeIndex={this.state.currentChallenge} challenge={this.challenge()} />
+      <div>
+  		  <Challenge challengeIndex={this.state.currentChallenge} challenge={this.challenge()} />
+        <div className='f7 tc mt4'><span className='black-30'>From @JanBaykara with</span> 💋</div>
+      </div>
     );
   }
 }

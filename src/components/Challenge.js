@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import color from 'color';
+import 'tachyons'; // atomic css classes
 import Toggle from './Toggle';
 
 export default class Challenge extends Component {
