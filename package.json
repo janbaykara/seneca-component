@@ -5,7 +5,7 @@
   "author": "Jan Baykara (janbaykara@gmail.com)",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/janbaykara/seneca-component#readme",
+  "homepage": "http://senecalearning.surge.sh",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/janbaykara/seneca-component.git"
