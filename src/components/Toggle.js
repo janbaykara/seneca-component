@@ -19,7 +19,7 @@ function Options(props) {
 }
 
 export default (props) =>
-  <div className='ma3 br-pill ba b--white w5 cf relative h center w-100 w-60-ns w-33-l'>
+  <div className='ma3 br-pill ba b--white w5 cf relative h center w-100 w-70-ns w-60-l'>
 		{/* Selector */}
 		<Selector answer={props.answer} setToggle={props.setToggle} toggleIndex={props.toggleIndex} />
 		<Options  answer={props.answer} textColor={props.textColor} thisOption={0} options={props.options} />
