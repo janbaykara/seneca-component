@@ -15,11 +15,13 @@
   },
   "dependencies": {
     "color": "^2.0.0",
-    "color-interpolate": "^1.0.2",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
     "global": "^4.3.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",
+    "react-test-renderer": "^16.0.0",
     "tachyons": "^4.8.1",
     "tachyons-cli": "^1.0.11"
   },
