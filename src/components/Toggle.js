@@ -1,5 +1,4 @@
 import React from 'react';
-import color from 'color';
 import 'tachyons'; // atomic css classes
 
 function Selector(props) {
@@ -14,7 +13,7 @@ function Selector(props) {
 function Options(props) {
 	return (
 		<div
-			style={{'pointerEvents': 'none', 'transition': 'color 0.3s', 'color': props.answer === props.thisOption ? color(props.textColor).darken(0.15) : 'white'}}
+			style={{'pointerEvents': 'none', 'transition': 'color 0.3s', 'color': props.answer === props.thisOption ? props.textColor : 'white'}}
 			className='b w-50 fl pa3 tc relative z-2 f6'>{props.options[props.thisOption]}</div>
 		)
 }
