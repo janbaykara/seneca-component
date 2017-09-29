@@ -1,25 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import interpolate from 'color-interpolate';
 import Toggle from './Toggle';
-
-const GradientDiv = styled.div`
-  position: relative;
-
-  &:before {
-    content: '';
-    display: block;
-    background: linear-gradient(to top, rgba(204,204,204,1) 0%,rgba(255,255,255,1) 100%);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: 0;
-  }
-`
 
 export default class Challenge extends Component {
   constructor(props) {
