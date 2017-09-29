@@ -1,21 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Challenge from './components/Challenge';
 
-class App extends Component {
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      challenges: [{
+      	question: 'Ideal conditions for the bacterial growth',
+      	toggles: [{
+      		options: ['Cold', 'Warm'],
+          answer: 0
+      	},{
+      		options: ['No water', 'Water'],
+          answer: 0
+      	},{
+      		options: ['No food', 'Food'],
+          answer: 0
+      	}],
+        colours: {
+          top: [
+            [ 249, 150, 110 ],
+            [ 249, 183, 110 ],
+            [ 250, 220, 111 ],
+            [  87, 230, 200 ]
+          ],
+          bottom: [
+            [245,  67,  43],
+            [245, 121,  48],
+            [246, 168,  51],
+            [ 39, 215, 224]
+          ]
+        }
+      }],
+      currentChallenge: 0
+    }
+  }
+
+  challenge = () => {
+    return this.state.challenges[this.state.currentChallenge]
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+		  <Challenge challengeIndex={this.state.currentChallenge} challenge={this.challenge()} />
     );
   }
 }
-
-export default App;
