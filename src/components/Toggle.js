@@ -1,11 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import 'tachyons'; // atomic css classes
+
+const HoverToggle = styled.div`
+	opacity: 0.5;
+	&:hover { opacity: 0.6 }
+	&:active { opacity: 0.3 }
+`
 
 function Selector(props) {
 	return (
-		<div
+		<HoverToggle
 			onClick={() => { props.setToggle(props.toggleIndex, props.answer === 0 ? 1 : 0) }}
-			className='b pointer br-pill bg-white o-60 w-50 h-100 pa3 absolute z-1 top-0 shadow-1'
+			className='b pointer br-pill bg-white w-50 h-100 pa3 absolute z-1 top-0 shadow-1'
 			style={{'left': (props.answer*50)+'%', 'transition': 'left 0.5s ease'}}/>
 	)
 }
